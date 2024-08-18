@@ -3,18 +3,17 @@ import os
 import environ
 import dj_database_url
 
+env = environ.Env()
+environ.Env.read_env()
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-x-ok87yg+ag#3i-3#_^l!1bp00_!k_o0*fj1=2+^+@(sq359-p"
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 BASE_DIR = Path(__file__).resolve().parent.parent
 CSRF_TRUSTED_ORIGINS = ["https://bangla-bank.onrender.com"]
 ALLOWED_HOSTS = ["*"]
-
-env = environ.Env()
-environ.Env.read_env()
 
 
 # Email Configuration
